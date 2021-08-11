@@ -16,7 +16,7 @@ export class DetailsComponent implements OnInit {
 
   items: Item[] = [];
   order: any = {};
-  defaultImg: string = '../assets/images/img.png';
+  defaultImg: string = 'assets/images/img.png';
 
   constructor(
     private route: ActivatedRoute,
