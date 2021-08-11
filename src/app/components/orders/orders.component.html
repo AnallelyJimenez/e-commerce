@@ -1,0 +1,32 @@
+<table>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Subtotal</th>
+            <th>Descuento</th>
+            <th>IVA</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <td>{{order.number}}
+                <!-- <p>Precio: $ {{item.price}}</p>
+                <div [hidden] = "item.hide">
+                    <p>Cantidad {{item.quantity}}</p>
+                    <p>Sku: {{item.sku}}</p>
+                    
+                </div>
+                <button type="button" (click)="toggle(item.id)">Detalles</button> -->
+            </td>
+            <td>{{order.totals.subtotal}}</td>
+            <td>{{order.totals.discount}}</td>
+            <td>{{order.totals.tax}}</td>
+            <td><span class="heading">${{order.totals.total}}</span></td>
+            <td class="actions">
+                <a mat-stroked-button color="primary" routerLink="/orden-detalles/{{order.id}}">Ver detalles</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

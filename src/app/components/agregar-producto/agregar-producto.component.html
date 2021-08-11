@@ -1,0 +1,35 @@
+<article>
+    <div class="btn-group">
+        <button mat-stroked-button type="button" color="primary" (click)=" goBack()">&#10229; Regresar</button>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <fieldset>
+            <mat-form-field appearance="fill" color="primary">
+                <mat-label>Nombre</mat-label>
+                <input id="itemName" matInput formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Precio</mat-label>
+                <input matInput type="number" class="example-right-align" formControlName="price" placeholder="0">
+                <span matPrefix>$&nbsp;</span>
+                <span matSuffix>.00</span>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Cantidad</mat-label>
+                <input matInput type="number" placeholder="0" min="1" formControlName="quantity">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" color="primary">
+                <mat-label>Sku</mat-label>
+                <input matInput formControlName="sku">
+            </mat-form-field>
+
+            <div class="btn-group align-center">
+                <button type="submit" mat-raised-button color="accent">Agregar</button>
+            </div>
+        </fieldset>
+    </form>
+</article>
+

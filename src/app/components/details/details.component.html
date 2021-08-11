@@ -1,0 +1,30 @@
+<section class="content">
+    <div class="btn-group nav">
+        <h1 class="title-order">Orden {{order.number}}</h1>
+        <a mat-stroked-button color="primary" routerLink="/agregar/{{order.id}}">Agregar producto</a>
+    </div>
+    <section class="row">
+        <mat-card class="card" *ngFor="let item of items">
+            <div class="grid">
+                <div class="col-img">
+                    <figure>
+                        <img mat-card-image [src]="item.imageUrl" alt="item.name">
+                        {{id}}
+                    </figure>
+                </div>
+                <div class="col-content">
+                    <mat-card-content class="card-content">
+                        <mat-card-title>{{item.name}}</mat-card-title>
+                        <h2 class="price">${{item.price}}</h2>
+
+                        <p>Cantidad: {{item.quantity}}</p>
+                        <p>Sku: {{item.sku}}</p>
+                    </mat-card-content>
+                </div>
+            </div>
+        </mat-card>
+    </section>
+    <div class="btn-group align-center">
+        <button mat-flat-button type="button" color="accent" (click)="openDialog()">Pagar</button>
+    </div>
+</section>
