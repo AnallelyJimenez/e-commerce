@@ -11,7 +11,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let order of orders">
-            <td>{{order.number}}
+            <td aria-label="No.">{{order.number}}
                 <!-- <p>Precio: $ {{item.price}}</p>
                 <div [hidden] = "item.hide">
                     <p>Cantidad {{item.quantity}}</p>
@@ -20,10 +20,10 @@
                 </div>
                 <button type="button" (click)="toggle(item.id)">Detalles</button> -->
             </td>
-            <td>{{order.totals.subtotal}}</td>
-            <td>{{order.totals.discount}}</td>
-            <td>{{order.totals.tax}}</td>
-            <td><span class="heading">${{order.totals.total}}</span></td>
+            <td aria-label="Subtotal:">{{order.totals.subtotal}}</td>
+            <td aria-label="Descuento:">{{order.totals.discount}}</td>
+            <td aria-label="IVA:">{{order.totals.tax}}</td>
+            <td aria-label="Total:"><span class="heading">${{order.totals.total}}</span></td>
             <td class="actions">
                 <a mat-stroked-button color="primary" routerLink="/orden-detalles/{{order.id}}">Ver detalles</a>
             </td>
